@@ -12,9 +12,10 @@ def count_of_letters(string):
 	return letter_dictionary
 
 #testing on test.txt file:
-# with open("test.txt") as myfile:
-# 	string = myfile.read()
-# 	print count_of_letters(string)
+with open("test.txt") as myfile:
+	string = myfile.read()
+	print "Letter dictionary: ", count_of_letters(string)
+	print
 
 
 
@@ -36,14 +37,14 @@ elif choice == 2:
 
 
 def string_prep(paragraph):
+
 	list_of_words = paragraph.split(" ")
-	#import string module for the string.punctuation function
-	import string
+	import string  #module for the string.punctuation function (list of all punctuation)
 	#creates tuples of (Index, Word)
 	for index, word in enumerate(list_of_words, 0):     
 	 #replaces each word with a cleansed version: lower case, removing leading and trailing punctuation and invisible characters       
 		list_of_words[index] = word.lower().strip(string.punctuation).strip()    
-	return list_of_words 
+	return list_of_words
 
 def count_of_words(list_of_words):
 	word_dictionary = {}
